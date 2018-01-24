@@ -1,165 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>simple crystal game</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<title>simple crystal game</title>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
-  <style type="text/css">
-
-    .crystal-image {
-      width: 100px;
-      height: 100px;
-      margin: 10px;
-    }
-  </style>
+  	<link rel="stylesheet" type="text/css" href="assets/style.css">
 
 </head>
 <body>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <h1 class="p-3 mb-2 bg-secondary text-white mt-4 text-center">Crystals Collector Game</h1>
-    </div>
-  </div>
+  	<div class="row justify-content-center">
+	    <div class="col-md-12">
+	      	<h1 class="p-3 mb-2 bg-secondary text-white mt-4 text-center">Crystals Collector Game</h1>
+	    </div>
+  	</div>
 
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <h2 class="p-3 mb-2 bg-danger text-white mt-4 text-center">Number to Guess: <span id="number-to-guess"></span></h2>
-    </div>
-  </div>
+	<div class="row justify-content-center">
+	    <div class="col-md-5">
+	      	<h2 class="p-3 mb-2 bg-danger text-white mt-4 text-center">Number to Guess: <span id="number-to-guess"></span></h2>
+	    </div>
+	</div>
 
-  <div class="row justify-content-center">
+    <div class="row justify-content-center">
         <div class="card text-white bg-success mb-3 m-4" style="width: 150px;">
-          <div class="card-body">
-            <h4 class="card-title">wins: <span id="wins"></span> </h4>
-          </div>
+          	<div class="card-body">
+            	<h4 class="card-title">wins: <span id="wins">0</span> </h4>
+          	</div>
         </div>
         <div class="card text-white bg-success mb-3 m-4" style="width: 150px;">
-          <div class="card-body">
-            <h4 class="card-title">losses: <span id="losses"></span></h4>
-          </div>
+            <div class="card-body">
+            	<h4 class="card-title">losses: <span id="losses">0</span></h4>
+            </div>
         </div>
-  </div>
-
-  <div class="row justify-content-center"> 
-    <div id="crystals">
     </div>
-  </div>
 
-  <div class="row justify-content-center">
-    <div class="col-sm-6 p-3 m-2 m-2 bg-warning">
-      <h5 class="card-title">Your total score is: <span id="total-score"></span></h5>
+    <div class="row justify-content-center"> 
+	    <div id="crystals">
+		    <img class="crystal-image" src="http://moziru.com/images/emerald-clipart-diamond-3.png" alt="diamond1">
+		    <img class="crystal-image" src="https://image.flaticon.com/icons/png/512/263/263399.png" alt="diamond2">
+		    <img class="crystal-image" src="https://vignette.wikia.nocookie.net/battlefordreamisland/images/f/f1/Ruby_Idle.png/revision/latest/scale-to-width-down/640?cb=20120809045354" alt="diamond3">
+		    <img class="crystal-image" src="https://img00.deviantart.net/fa0b/i/2012/186/c/b/rarigreedy__s_diamond_by_zutheskunk-d4a7e6s.png" alt="diamond4">
+	    </div>
     </div>
-  </div>
+
+  	<div class="row justify-content-center">
+    	<div class="col-sm-6 p-3 m-2 m-2 bg-warning">
+      		<h5 class="card-title">Your total score is: <span id="total-score"></span></h5>
+    	</div>
+  	</div>
 
 </div>
 
   <!-- JAVASCRIPT  -->
-  <!-- ========================================= -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-
-  var winsPoints = 0;
-  var lossesPionts = 0;
-
-  function main() {
-  	console.log("main");
-  //Get a ramdon number for a guess number
-  var targetNumber = Math.floor(Math.random() * 100) + 19;
-  $("#number-to-guess").text(targetNumber);
-  var counter = 0;
-
-  // Creating multiple crystals each with their own unique number value.
-  // We begin by expanding our array to include four options.
-  var numberOptions = [1, 2, 3, 4];
-  var compPick;
-  var pics = ["http://moziru.com/images/emerald-clipart-diamond-3.png","https://image.flaticon.com/icons/png/512/263/263399.png","https://vignette.wikia.nocookie.net/battlefordreamisland/images/f/f1/Ruby_Idle.png/revision/latest/scale-to-width-down/640?cb=20120809045354","https://img00.deviantart.net/fa0b/i/2012/186/c/b/rarigreedy__s_diamond_by_zutheskunk-d4a7e6s.png"];
-
-  // Next we create a for loop to create crystals for every numberOption.
-  for (var i = 0; i < numberOptions.length; i++) {
-
-    // For each iteration, we will create an imageCrystal
-    var imageCrystal = $("<img>");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    imageCrystal.addClass("crystal-image");
-
-    // Each imageCrystal will be given a src link to the crystal image
-    imageCrystal.attr("src", pics[i]);
-
-    //computer will pick a random number between 1~12
-    compPick = Math.floor(Math.random() * 12) + 1;
-
-    //to avoid each crystal has the same random number
-    if (numberOptions.indexOf(compPick) >= 0) {
-    numberOptions[i] = compPick;
-    }
-    else {
-      while (numberOptions.indexOf(compPick) >= 0) {
-        numberOptions[i] = compPick;
-      }
-    }
-
-    console.log("this is the computer pick "+ compPick);
-
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-    imageCrystal.attr("data-crystalvalue", compPick);
-
-    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    $("#crystals").append(imageCrystal);
-  }
-
-
-  // This time, our click event applies to every single crystal on the page. Not just one.
-  $(".crystal-image").on("click", function() {
-
-    // Determining the crystal's value requires us to extract the value from the data attribute.
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
-    $("#total-score").html(counter += crystalValue);
-    console.log("wins Points:" + winsPoints,counter,targetNumber);
-
-    // All of the same game win-lose logic applies.
-    if (counter === targetNumber) {
-    	console.log("wins");
-      winsPoints++;
-      $("#wins").html(winsPoints);
-      reset();
-
-    }
-
-    else if (counter >= targetNumber) {
-      lossesPionts++;
-      console.log("losses",lossesPionts);
-      $("#losses").html(lossesPionts);
-      reset();
-    }
-    console.log("and");
-
-   
-  });
-
-  }
-    //reset the game after the player wins or losses
-    function reset() {
-    	console.log("reset");
-      counter = 0;
-      targetNumber = Math.floor(Math.random() * 100) + 19;
-      $("#number-to-guess").text(targetNumber);
-      $("#total-score").html(counter);
-      $("#crystals").empty();
-      main();
-    }
-
-  main();
-
-
-  </script>
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script type="text/javascript" src="assets/game.js"></script>
 </body>
 </html>
