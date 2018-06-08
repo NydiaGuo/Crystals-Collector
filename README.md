@@ -17,3 +17,5 @@ Crystal Collector is a clicking game that built with jQuery and JavaScript. Each
 ## Technoogies used
 - [jQuery](https://jquery.com/)
 - [Bootstrap](https://getbootstrap.com/)
+- [JavaScript](https://www.javascript.com/)
+- HTML&CSS
