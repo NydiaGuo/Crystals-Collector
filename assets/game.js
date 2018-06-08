@@ -12,6 +12,7 @@ var targetNumber = 0;
     crystalValue = parseInt(crystalValue);
     counter += crystalValue;
     $("#total-score").html(counter);
+    console.log("crystal value: ", crystalValue);
 
     // All of the same game win-lose logic applies.
     if (counter === targetNumber) {
@@ -35,6 +36,8 @@ var targetNumber = 0;
       targetNumber = Math.floor(Math.random() * 100) + 19;
       $("#number-to-guess").text(targetNumber);
       $("#total-score").html(counter);
+      console.log("number to guess: ", targetNumber);
+      console.log("total score: ", counter);
     
       var images = $(".crystal-image");
 
