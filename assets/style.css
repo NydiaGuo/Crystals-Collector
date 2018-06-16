@@ -6,6 +6,18 @@
     
 	}
 
+body {
+	background: linear-gradient(132deg, rgba(72, 72, 245, 0.842),rgb(90, 18, 141),rgb(241, 142, 241) );
+	background-size: 400% 400%;
+	animation: BackgroundGradient 30s ease infinite;
+}
+
+@keyframes BackgroundGradient {
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
+}
+
 footer{
 	position: fixed;
 	font-size: 15px;
