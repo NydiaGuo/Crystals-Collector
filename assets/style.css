@@ -14,6 +14,10 @@ body {
 	color: white;
 }
 
+#crystals {
+	margin-bottom: 10px; 
+}
+
 #crystals img {
 	border-radius: 3px;
 }
