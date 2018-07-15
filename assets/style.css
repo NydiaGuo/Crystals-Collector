@@ -4,18 +4,23 @@
 	height: 100px;
 	margin: 10px;
     
-	}
-
-body {
-	background: linear-gradient(132deg, rgba(72, 72, 245, 0.842),rgb(90, 18, 141),rgb(241, 142, 241) );
-	background-size: 400% 400%;
-	animation: BackgroundGradient 30s ease infinite;
 }
 
-@keyframes BackgroundGradient {
-	0% {background-position: 0% 50%;}
-	50% {background-position: 100% 50%;}
-	100% {background-position: 0% 50%;}
+body {
+
+	background-image: url("images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: white;
+}
+
+#crystals img {
+	border-radius: 3px;
+}
+
+.row #crystals img:hover {
+	cursor: pointer;
+	padding: 5px 5px 5px 5px;
 }
 
 footer{
@@ -24,4 +29,4 @@ footer{
 	text-shadow: 1px 1px #1e2022;
 	margin-top: 15px;
 	margin-bottom: 10px;
-	}
+}

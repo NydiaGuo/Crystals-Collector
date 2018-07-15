@@ -12,38 +12,39 @@
 <div class="container">
   	<div class="row justify-content-center">
 	    <div class="col-md-12">
-			  <h1 class="p-3 bg-secondary text-white mt-4 text-center">Crystals Collector Game</h1>
-			  <p class="p-4 text-white">
+			  <h1 class="p-3 text-white mt-3 text-center display-4"><strong>Crystals Collector Game</strong></h1>
+			  <h5 class="p-4 text-white">
 				  <strong>Rules: </strong>Try to get the number you need to guess in the red area by clicking the four crystals. Each crystals have a hidden number, try to add up each hidden numbers to get the "number to guess". If you get it right you wins will add one point, otherwise, your losses will add one point. Computer will ganerate another ramdon number for you! Good luch and have fun!
-			  </p>
+			  </h5>
 	    </div>
   	</div>
 
 	<div class="row justify-content-center">
-	    <div class="col-md-5">
-	      	<h2 class="p-3 mb-2 bg-danger text-white mt-4 text-center">Number to Guess: <span id="number-to-guess"></span></h2>
-	    </div>
+			<div class="card text-white bg-success m-3" style="width: 150px;">
+					<div class="card-body">
+					  <h4 class="card-title">wins: <span id="wins">0</span> </h4>
+					</div>
+			  </div>
+			  <div class="card text-white bg-success m-3" style="width: 150px;">
+				  <div class="card-body">
+					  <h4 class="card-title">losses: <span id="losses">0</span></h4>
+				  </div>
+			  </div>
+
 	</div>
 
     <div class="row justify-content-center">
-        <div class="card text-white bg-success mb-3 m-4" style="width: 150px;">
-          	<div class="card-body">
-            	<h4 class="card-title">wins: <span id="wins">0</span> </h4>
-          	</div>
-        </div>
-        <div class="card text-white bg-success mb-3 m-4" style="width: 150px;">
-            <div class="card-body">
-            	<h4 class="card-title">losses: <span id="losses">0</span></h4>
-            </div>
-        </div>
+			<div class="col-md-5">
+					<h2 class="p-3 mb-2 text-white text-center">Number to Guess: <span id="number-to-guess"></span></h2>
+			  </div>
     </div>
 
     <div class="row justify-content-center"> 
 	    <div id="crystals">
-		    <img class="crystal-image" src="http://moziru.com/images/emerald-clipart-diamond-3.png" alt="diamond1">
-		    <img class="crystal-image" src="https://image.flaticon.com/icons/png/512/263/263399.png" alt="diamond2">
-		    <img class="crystal-image" src="https://vignette.wikia.nocookie.net/battlefordreamisland/images/f/f1/Ruby_Idle.png/revision/latest/scale-to-width-down/640?cb=20120809045354" alt="diamond3">
-		    <img class="crystal-image" src="https://img00.deviantart.net/fa0b/i/2012/186/c/b/rarigreedy__s_diamond_by_zutheskunk-d4a7e6s.png" alt="diamond4">
+		    <img class="crystal-image" src="assets/images/blue.jpg" alt="diamond1">
+		    <img class="crystal-image" src="assets/images/green.jpg" alt="diamond2">
+		    <img class="crystal-image" src="assets/images/pink.jpg" alt="diamond3">
+		    <img class="crystal-image" src="assets/images/red.jpg" alt="diamond4">
 	    </div>
     </div>
 
