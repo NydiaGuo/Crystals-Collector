@@ -36,8 +36,6 @@ var targetNumber = 0;
       targetNumber = Math.floor(Math.random() * 100) + 19;
       $("#number-to-guess").text(targetNumber);
       $("#total-score").html(counter);
-      console.log("number to guess: ", targetNumber);
-      console.log("total score: ", counter);
     
       var images = $(".crystal-image");
 
